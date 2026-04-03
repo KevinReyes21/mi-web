@@ -44,51 +44,70 @@ font-size: 3em;
 }
 
 section {
-  padding: 20px;
-  max-width: 900px;
+  background: rgba(255, 255, 255, 0.05);
   margin: 20px auto;
+  padding: 25px;
+  border-radius: 15px;
+  max-width: 900px;
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  transition: all 0.3s ease;
+}
+
+section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 255, 255, 0.2);
 }
 
 h2 {
-border-bottom: 2px solid #38bdf8;
-padding-bottom: 10px;
+  border-bottom: none;
+  margin-bottom: 15px;
+  color: #00ffff;
+  font-weight: 600;
+}
+
+p, li {
+  line-height: 1.6;
+  color: #e2e8f0;
 }
 
 .proyecto {
-background: #1e293b;
-padding: 20px;
-margin-top: 20px;
-border-radius: 10px;
-transition: 0.3s;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 18px;
+  margin-top: 15px;
+  border-radius: 10px;
+  border-left: 3px solid #00ffff;
+
+  transition: 0.3s;
 }
 
 .proyecto:hover {
-transform: scale(1.02);
-background: #334155;
+  background: rgba(0, 255, 255, 0.08);
+  transform: scale(1.01);
 }
 
 
-/* 📱 CELULAR */
 @media (max-width: 768px) {
 
-  header {
-    padding: 30px 10px;
+  section {
+    margin: 10px;
+    padding: 15px;
   }
 
   h1 {
     font-size: 1.8em;
   }
 
-  section {
-    padding: 15px;
-    margin: 10px;
+  h2 {
+    font-size: 1.3em;
   }
 
   .proyecto {
     padding: 15px;
   }
 
-  ul {
-    padding-left: 20px;
-  }
 }
