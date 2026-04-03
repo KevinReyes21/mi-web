@@ -1,8 +1,34 @@
 body {
-margin: 0;
-font-family: 'Montserrat', sans-serif;
-background: #0f172a;
-color: white;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: #0a0a0a;
+    color: white;
+}
+
+/* 🔥 FONDO ANIMADO */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.contenido {
+    position: relative;
+    z-index: 1;
+    padding: 40px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* TARJETAS */
+.card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
 }
 
 header {
