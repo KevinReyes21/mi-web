@@ -4,10 +4,10 @@ particlesJS("particles-js", {
         color: { value: "#00ffff" },
         shape: { type: "circle" },
         opacity: { value: 0.5 },
-        size: { value: 3 },
+        size: { value: 4 },
         move: {
             enable: true,
-            speed: 1
+            speed: 2
         }
     },
     interactivity: {
@@ -19,3 +19,4 @@ particlesJS("particles-js", {
         }
     }
 });
+console.log("particles cargando...");
