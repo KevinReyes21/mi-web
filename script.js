@@ -7,7 +7,7 @@ particlesJS("particles-js", {
         size: { value: 4 },
         move: {
             enable: true,
-            speed: 2
+            speed: 1
         }
     },
     interactivity: {
