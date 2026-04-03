@@ -44,9 +44,9 @@ font-size: 3em;
 }
 
 section {
-padding: 40px;
-max-width: 900px;
-margin: auto;
+  padding: 20px;
+  max-width: 900px;
+  margin: 20px auto;
 }
 
 h2 {
@@ -65,4 +65,30 @@ transition: 0.3s;
 .proyecto:hover {
 transform: scale(1.02);
 background: #334155;
+}
+
+
+/* 📱 CELULAR */
+@media (max-width: 768px) {
+
+  header {
+    padding: 30px 10px;
+  }
+
+  h1 {
+    font-size: 1.8em;
+  }
+
+  section {
+    padding: 15px;
+    margin: 10px;
+  }
+
+  .proyecto {
+    padding: 15px;
+  }
+
+  ul {
+    padding-left: 20px;
+  }
 }
