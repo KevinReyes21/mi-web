@@ -76,13 +76,11 @@ p, li {
 }
 
 .proyecto {
-  background: rgba(0, 0, 0, 0.4);
-  padding: 18px;
-  margin-top: 15px;
-  border-radius: 10px;
-  border-left: 3px solid #00ffff;
-
-  transition: 0.3s;
+    background: #1e293b;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    transition: 0.3s;
 }
 
 .proyecto:hover {
@@ -137,4 +135,12 @@ p, li {
 .whatsapp-btn:hover {
   transform: scale(1.1);
   background: #1ebe5d;
+}
+
+.proyecto {
+    background: #1e293b;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    transition: 0.3s;
 }
