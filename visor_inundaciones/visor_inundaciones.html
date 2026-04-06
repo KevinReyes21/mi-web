@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Visor de Inundaciones</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+<header class="header">
+<h1>🌊 Visor de Inundaciones</h1>
+<p>Mérida, Yucatán</p>
+</header>
+
+<!-- SIDEBAR -->
+<div id="sidebar" class="cerrado">
+  
+  <div class="sidebar-header">
+    <span>Capas</span>
+    <button id="close-btn">←</button>
+  </div>
+
+  <label>
+    <input type="checkbox" id="chkManzanas" checked>
+    Manzanas
+  </label>
+
+  <label>
+    <input type="checkbox" id="chkInundacion" checked>
+    Inundación
+  </label>
+
+</div>
+
+<div id="map"></div>
+
+<!-- BOTÓN MENU -->
+<div id="menu-btn">☰</div>
+
+
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

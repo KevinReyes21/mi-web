@@ -193,3 +193,19 @@ p, li {
 .menu a:hover {
     color: #ffffff;
 }
+
+.btn-proyecto {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 15px;
+    background: #38bdf8;
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.btn-proyecto:hover {
+    background: #0ea5e9;
+}
