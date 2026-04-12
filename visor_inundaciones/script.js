@@ -5,18 +5,30 @@ var map = L.map('map', {
 
 var capaManzanas;
 var capaInundacion;
+let datosManzanas;
 
 // 🗺️ BASEMAP
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© OpenStreetMap'
 }).addTo(map);
 
-// 🎨 ESTILOS
-function estiloManzanas() {
+function estiloManzanas(feature) {
+
+    const afectacion = (feature.properties.afectacion_inundacion || "").toLowerCase();
+
+    let color = "#ccc"; // default
+
+    if (afectacion === "si") {
+        color = "#ef4444";
+    } else if (afectacion === "no") {
+        color = "#22c55e";
+    }
+
     return {
-        color: "#888",
-        weight: 0.9,
-        fillOpacity: 0.1
+        color: "#333",
+        weight: 0.8,
+        fillColor: color,
+        fillOpacity: 0.6
     };
 }
 
@@ -33,6 +45,7 @@ function estiloInundacion() {
 fetch('data/manzanas.geojson')
 .then(res => res.json())
 .then(data => {
+    datosManzanas = data; // 🔥 guardar original
     capaManzanas = L.geoJSON(data, {
         style: estiloManzanas,
         onEachFeature: popupManzana
@@ -119,3 +132,46 @@ function popupManzana(feature, layer) {
         });
     }
 }
+
+
+function aplicarFiltros() {
+
+    const tipo = document.getElementById("filtroTipo").value;
+    const afectacion = document.getElementById("filtroAfectacion").value;
+
+    // limpiar capa
+    map.removeLayer(capaManzanas);
+
+    // filtrar datos
+    const filtrados = {
+        type: "FeatureCollection",
+        features: datosManzanas.features.filter(f => {
+
+            const cumpleTipo =
+                tipo === "todos" || f.properties.AMBITO === tipo;
+
+            const cumpleAfectacion =
+                afectacion === "todos" ||
+                f.properties.afectacion_inundacion === afectacion;
+
+            return cumpleTipo && cumpleAfectacion;
+        })
+    };
+
+    // volver a dibujar
+    capaManzanas = L.geoJSON(filtrados, {
+        style: estiloManzanas,
+        onEachFeature: popupManzana
+    }).addTo(map);
+}
+
+document.getElementById("filtroTipo").addEventListener("change", aplicarFiltros);
+document.getElementById("filtroAfectacion").addEventListener("change", aplicarFiltros);
+
+
+const modal = document.getElementById("modal-aviso");
+const btn = document.getElementById("btn-entendido");
+
+btn.addEventListener("click", () => {
+    modal.style.display = "none";
+});

@@ -25,6 +25,22 @@
     <button id="close-btn">←</button>
   </div>
 
+  <h3>Filtros</h3>
+
+<label>Tipo de manzana:</label>
+<select id="filtroTipo">
+    <option value="todos">Todos</option>
+    <option value="Urbana">Urbana</option>
+    <option value="Rural">Rural</option>
+</select>
+
+<label>Afectación:</label>
+<select id="filtroAfectacion">
+    <option value="todos">Todos</option>
+    <option value="si">Con inundación</option>
+    <option value="no">Sin inundación</option>
+</select>
+
   <label>
     <input type="checkbox" id="chkManzanas" checked>
     Manzanas
@@ -42,7 +58,24 @@
 <!-- BOTÓN MENU -->
 <div id="menu-btn">☰</div>
 
+<div id="modal-aviso" class="modal">
+    <div class="modal-contenido">
+        <h2>Aviso importante</h2>
+        <p>
+            Este visor representa una simulación de zonas de inundación basada en un Modelo Digital de Elevación (DEM) 
+            y herramientas de análisis en QGIS.
+        </p>
+        <p>
+            Los resultados mostrados no deben considerarse como un análisis hidrológico definitivo, ya que no incluyen 
+            variables clave como drenaje, suelo, infraestructura o intensidad de lluvia.
+        </p>
+        <p>
+            Este visor tiene fines demostrativos y muestra las capacidades de desarrollo de herramientas GIS web.
+        </p>
 
+        <button id="btn-entendido">Entendido</button>
+    </div>
+</div>
 
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script src="script.js"></script>
