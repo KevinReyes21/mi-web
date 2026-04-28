@@ -24,20 +24,11 @@ body {
     margin: auto;
 }
 
-/* TARJETAS */
-.card {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    backdrop-filter: blur(10px);
-}
-
+/* HEADER */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   padding: 80px 40px;
   max-width: 1100px;
   margin: auto;
@@ -62,10 +53,8 @@ body {
   background: rgba(255, 255, 255, 0.05);
   padding: 10px;
   border-radius: 20px;
-
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255,255,255,0.1);
-
   transition: 0.3s;
 }
 
@@ -79,49 +68,33 @@ body {
   transform: scale(1.05);
 }
 
-@media (max-width: 768px) {
-
-  .header {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .header-card {
-    margin-top: 20px;
-  }
-
-}
-
+/* TITULOS */
 h1 {
-margin: 0;
-font-size: 3em;
+  margin: 0;
+  font-size: 3em;
 }
 
+h2 {
+  margin-bottom: 15px;
+  color: #38bdf8; /* 🔥 azul elegante */
+  font-weight: 600;
+}
+
+/* SECTIONS */
 section {
   background: rgba(255, 255, 255, 0.05);
   margin: 20px auto;
   padding: 25px;
   border-radius: 15px;
   max-width: 1000px;
-
   backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-
   border: 1px solid rgba(255,255,255,0.08);
-
   transition: all 0.3s ease;
 }
 
 section:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 255, 255, 0.2);
-}
-
-h2 {
-  border-bottom: none;
-  margin-bottom: 15px;
-  color: #00ffff;
-  font-weight: 600;
+  box-shadow: 0 10px 30px rgba(56,189,248,0.15);
 }
 
 p, li {
@@ -129,120 +102,44 @@ p, li {
   color: #e2e8f0;
 }
 
+/* EXPERIENCIA FULL WIDTH */
 #experiencia {
   position: relative;
-
   width: 100vw;
   left: 50%;
   transform: translateX(-50%);
-
-  max-width: none;   /* 🔥 rompe el límite */
-  margin: 0;         /* 🔥 quita centrado */
+  max-width: none;
+  margin: 0;
   padding: 80px 40px;
-
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
-  overflow: visible;
 }
 
-
-.proyecto {
-    background: #1e293b;
-    padding: 20px;
-    margin-top: 20px;
-    border-radius: 10px;
-    transition: 0.3s;
+#experiencia h2 {
+  text-align: center;
 }
 
-.proyecto:hover {
-    transform: scale(1.02);
-    background: #334155;
-}
-
-.proyecto a {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 8px 15px;
-    background: #38bdf8;
-    color: #000;
-    border-radius: 5px;
-    text-decoration: none;
-}
-
-
-@media (max-width: 768px) {
-
-  section {
-    margin: 10px;
-    padding: 15px;
-  }
-
-  h1 {
-    font-size: 1.8em;
-  }
-
-  h2 {
-    font-size: 1.3em;
-  }
-
-  .proyecto {
-    padding: 15px;
-  }
-
-}
-
-
-.whatsapp-btn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-
-  background: #25D366;
-
-  width: 60px;
-  height: 60px;
-
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
-
-  z-index: 1000;
-  transition: 0.3s;
-}
-
-.whatsapp-btn:hover {
-  transform: scale(1.1);
-  background: #1ebe5d;
-}
-
+/* MENU */
 .menu {
     position: sticky;
     top: 0;
     width: 100%;
-
     background: rgba(2, 6, 23, 0.85);
     backdrop-filter: blur(10px);
-
     display: flex;
     justify-content: center;
     gap: 40px;
-
     padding: 15px 0;
-
     z-index: 1000;
     border-bottom: 1px solid rgba(56, 189, 248, 0.2);
 }
 
 .menu a {
-    color: #38bdf8;
+    color: #7dd3fc;
     text-decoration: none;
     font-weight: 600;
     font-size: 16px;
-
     position: relative;
     transition: 0.3s;
 }
@@ -266,76 +163,16 @@ p, li {
     color: #ffffff;
 }
 
-.btn-proyecto {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 8px 15px;
-    background: #38bdf8;
-    color: black;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 14px;
-    transition: 0.3s;
-}
-
-.btn-proyecto:hover {
-    background: #0ea5e9;
-}
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-
-/* cada bloque */
-.skill-group {
-  background: rgba(255, 255, 255, 0.04);
-  padding: 15px;
-  border-radius: 12px;
-  transition: 0.3s;
-}
-
-.skill-group:hover {
-  transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.07);
-}
-
-/* badge */
-.badge {
-  display: inline-block;
-  background: rgba(56,189,248,0.15);
-  color: #38bdf8;
-
-  font-size: 12px;
-  font-weight: 00;
-  letter-spacing: 1.5px;
-
-  padding: 5px 14px;
-  border-radius: 20px;
-
-  margin-bottom: 10px;
-  text-transform: uppercase;
-}
-
-/* chips */
-.chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.chip {
-  background: rgba(255,255,255,0.08);
-  padding: 5px 10px;
-  border-radius: 15px;
-  font-size: 12px;
-  color: #e2e8f0;
-}
-
+/* SKILLS */
 .full-width {
-  max-width: 1800px;   /* más ancho */
-  width: 100%;          /* ocupa casi toda la pantalla */
+  max-width: 1800px;
+  width: 100%;
+}
+
+#habilidades-tecnicas h2 {
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  text-align: center;
 }
 
 .skills-grid {
@@ -345,83 +182,53 @@ p, li {
   gap: 15px;
   padding-bottom: 10px;
 }
+
 .skill-group {
   padding: 10px 15px;
   border-radius: 10px;
   background: rgba(255,255,255,0.04);
-
   min-width: 180px;
-}
-
-/* CARD */
-.card {
-  position: relative;
-  margin-top: 60px;
-  padding: 15px;
-  border-radius: 10px;
-
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(10px);
-
-  cursor: pointer;
   transition: 0.3s;
 }
 
-.card:hover {
+.skill-group:hover {
   transform: translateY(-5px);
+  background: rgba(255,255,255,0.07);
 }
 
-.popup {
-  position: absolute;
-
-  top: 110%;   /* 🔥 ahora sale hacia abajo */
-  left: 50%;
-  transform: translateX(-50%) translateY(-10px);
-
-  width: 220px;
-
-  background: #0f172a;
-  padding: 15px;
-  border-radius: 10px;
-
-  opacity: 0;
-  pointer-events: none;
-
-  transition: 0.3s;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-  z-index: 20;
+.badge {
+  display: inline-block;
+  background: rgba(56,189,248,0.2);
+  color: #7dd3fc;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  padding: 5px 14px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
 }
 
-.popup::after {
-  content: "";
-  position: absolute;
-
-  top: -6px;   /* 🔥 ahora arriba */
-  left: 50%;
-  transform: translateX(-50%);
-
-  border-width: 6px;
-  border-style: solid;
-  border-color: transparent transparent #0f172a transparent;
-}
-.card:hover .popup {
-  opacity: 1;
-  transform: translateX(-50%) translateY(0);
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
+.chip {
+  background: rgba(255,255,255,0.06);
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 12px;
+  color: #cbd5f5;
+}
 
+/* TIMELINE */
 .timeline-horizontal {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-
-  position: relative;
-  margin-top: 50px;
-  padding-top: 40px;
+  gap: 40px;
   overflow-x: auto;
-  padding-bottom: 40px;
-  overflow-x: auto;   
-  gap: 40px;   
+  padding: 60px 80px 40px;
+  position: relative;
 }
 
 .timeline-horizontal::before {
@@ -429,72 +236,41 @@ p, li {
   position: absolute;
   top: 40px;
   left: 0;
-
-  width: 100%; /* ahora sí funciona */
+  width: 100%;
   height: 2px;
-
-  background: rgba(56,189,248,0.3);
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(56,189,248,0.4),
+    transparent
+  );
 }
-
 
 .timeline-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-
   min-width: 250px;
   flex-shrink: 0;
-
-  position: relative;
-}
-
-.timeline-horizontal {
-  display: flex;
-  gap: 40px;
-
-  overflow-x: auto;
-
-  padding: 60px 80px 40px; /* 🔥 más espacio izquierda/derecha */
-}
-
-.timeline-horizontal::-webkit-scrollbar {
-  height: 6px;
-}
-
-#experiencia h2 {
-  text-align: center;
-}
-
-.timeline-horizontal::-webkit-scrollbar-thumb {
-  background: rgba(56,189,248,0.4);
-  border-radius: 10px;
-}
-
-#habilidades-tecnicas h2 {
-  max-width: 1200px;
-  margin: 0 auto 40px;
-  text-align: center;
 }
 
 .fecha {
-  font-size: 16px;
-  color: #708184;
+  font-size: 14px;
+  color: #94a3b8;
   margin-bottom: 10px;
-  text-align: center;
 }
 
 .punto {
   width: 12px;
   height: 12px;
-  background: #3bf838;
+  background: #22c55e; /* 🔥 verde pro */
   border-radius: 50%;
-
   margin-bottom: 10px;
 }
 
-/* card ABAJO */
+/* CARDS */
 .card {
-  margin-top: 60px;
+  margin-top: 10px;
   background: rgba(255,255,255,0.05);
   padding: 15px;
   border-radius: 10px;
@@ -502,70 +278,79 @@ p, li {
   transition: 0.3s;
 }
 
-
-
 .card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
 }
+
+/* WHATSAPP */
+.whatsapp-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+  z-index: 1000;
+  transition: 0.3s;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.1);
+  background: #1ebe5d;
+}
+
+/* SCROLLBAR */
+.timeline-horizontal::-webkit-scrollbar {
+  height: 6px;
+}
+
+.timeline-horizontal::-webkit-scrollbar-thumb {
+  background: rgba(56,189,248,0.4);
+  border-radius: 10px;
+}
+
+/* RESPONSIVE */
 @media (max-width: 768px) {
+
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .header-card {
+    margin-top: 20px;
+  }
+
+  section {
+    margin: 10px;
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.8em;
+  }
+
+  h2 {
+    font-size: 1.3em;
+  }
 
   .timeline-horizontal {
     flex-direction: column;
-    gap: 40px;
     overflow: visible;
   }
 
-.timeline-horizontal::before {
-  content: "";
-  position: absolute;
-
-  top: 30px; /* 🔥 ajusta hasta que coincida con los puntos */
-
-  left: 0;
-  width: 100%;
-  height: 2px;
-
-  background: rgba(56,189,248,0.3);
-}
-  .timeline-item {
-    width: 100%;
-  }
-
-  .fecha {
-    position: static;
-    margin-bottom: 5px;
+  .timeline-horizontal::before {
+    display: none;
   }
 
   .punto {
     display: none;
   }
 
-  .card {
-    margin-top: 10px;
-  }
-
-}
-
-/* contenido oculto */
-.experiencia-card .contenido {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: all 0.4s ease;
-}
-
-/* hover */
-.experiencia-card:hover .contenido {
-  max-height: 300px;
-  opacity: 1;
-  margin-top: 10px;
-}
-
-/* efecto */
-.experiencia-card {
-  cursor: pointer;
-}
-
-.experiencia-card:hover {
-  background: rgba(255,255,255,0.08);
 }
