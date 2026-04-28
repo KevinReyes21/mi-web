@@ -20,4 +20,3 @@ particlesJS("particles-js", {
     }
 });
 
-
