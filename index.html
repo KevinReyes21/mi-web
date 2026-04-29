@@ -7,7 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 </head> 
 
 <body>
@@ -248,6 +248,25 @@
 </section>
 
 
+<section id="trabajos-campo">
+
+  <h2>Trabajos de Campo</h2>
+
+  <div class="map-layout">
+
+    <div class="map-wrapper">
+      <div id="map"></div>
+    </div>
+
+    <div class="info-panel" id="info-panel">
+      <h3>Selecciona un punto</h3>
+      <p>Aquí verás la información del trabajo.</p>
+    </div>
+
+  </div>
+
+</section>
+
 <section id="idiomas">
   <h2>Idiomas</h2>
   <ul>
@@ -256,44 +275,7 @@
   </ul>
 </section>
 
-<section id="herramientas">
-  <h2>Herramientas y Tecnologías</h2>
 
-  <p><strong>GIS / CAD:</strong> ArcGIS, QGIS, Global Mapper, Agisoft Metashape, AutoCAD, CivilCAD, Civil 3D, GeoServer</p>
-
-  <p><strong>Programación:</strong> HTML, CSS, JavaScript, Python, R, MATLAB</p>
-
-  <p><strong>Base de datos:</strong> PostgreSQL</p>
-
-  <p><strong>Instrumental:</strong></p>
-  <ul>
-    <li>Estación total: Geomax, Hi-target, Leica</li>
-    <li>GNSS: Hi-target, Geomax</li>
-    <li>Drones: Autel Evo II Pro, Gemini, Mavic 3</li>
-  </ul>
-
-</section>
-
-<section id="habilidades">
-  <h2>Habilidades</h2>
-  <ul>
-    <li>Proactividad</li>
-    <li>Trabajo en equipo</li>
-    <li>Responsabilidad</li>
-  </ul>
-</section>
-
-
-<section id="proyectos">
-  <h2>Proyectos</h2>
-
-  <div class="proyecto">
-    <h3>Visor GIS Web</h3>
-    <p>Desarrollo de visor geográfico con integración de datos vectoriales, raster y modelos 3D.</p>
-  </div>
-
-
-</section>
 
 <section id="contacto">
   <h2>Contacto</h2>
@@ -301,7 +283,7 @@
   <p>📧 kevinreyesgeo@gmail.com</p>
   <p>📍 Culiacán, México</p>
 </section>
-
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 <script src="script.js"></script>

@@ -6,6 +6,52 @@ body {
     overflow-x: hidden;
 }
 
+
+
+.map-layout {
+  display: flex;
+  gap: 30px;
+
+  width: 100vw;              /* 👈 ocupa todo el ancho */
+  margin-left: calc(-50vw + 50%); /* 👈 rompe el centrado */
+
+  padding: 0 40px;          /* opcional */
+}
+
+/* MAPA */
+.map-wrapper {
+  flex: 2;
+}
+
+#map {
+  height: 500px;
+  width: 100%;
+  border-radius: 20px;
+}
+
+.info-panel {
+  flex: 1;
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+
+  height: 470px;   
+  overflow-y: auto;       /* 👈 🔥 CLAVE */
+
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.info-panel h3 {
+  margin-top: 0;
+  color: #38bdf8;
+}
+
+#trabajos-campo h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
 #particles-js {
   position: fixed;
   top: 0;
@@ -353,4 +399,35 @@ p, li {
     display: none;
   }
 
+}
+
+#trabajos-campo {
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  transform: translateX(-50%);
+  
+  max-width: none;
+  margin: 0;
+  padding: 80px 40px;
+
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+@media (max-width: 900px) {
+  .map-layout {
+    flex-direction: column;
+  }
+}
+
+.glow-marker {
+  animation: pulseGlow 5s infinite;
+}
+
+@keyframes pulseGlow {
+  0% { filter: drop-shadow(0 0 5px currentColor); }
+  50% { filter: drop-shadow(0 0 15px currentColor); }
+  100% { filter: drop-shadow(0 0 5px currentColor); }
 }
