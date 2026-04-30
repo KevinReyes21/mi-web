@@ -416,10 +416,20 @@ section#trabajos-campo {
   backdrop-filter: none;
 }
 
-.info-panel iframe {
-  margin-top: 15px;
-  border-radius: 12px;
+.video-container {
   width: 100%;
+  height: 70%;
+  aspect-ratio: 30 / 16;
+  overflow: hidden;
+  border-radius: 12px;
+  margin-top: 15px;
+}
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;  /* 👈 🔥 clave */
+  background: black;    /* para que no se vea feo */
 }
 
 @media (max-width: 900px) {

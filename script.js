@@ -104,6 +104,7 @@ fetch('data/trabajos.geojson')
 
   });
 
+  
 function actualizarPanel(props) {
 
   let contenido = `
@@ -112,12 +113,14 @@ function actualizarPanel(props) {
     <p>${props.descripcion}</p>
   `;
 
-  // 👇 si hay reel, lo agrega
-  if (props.reel) {
+  // 👉 VIDEO (Cloudinary u otro mp4)
+  if (props.video) {
     contenido += `
-    <a href="${props.reel}" target="_blank" style="color:#38bdf8;">
-        Ver video en Instagram
-    </a>
+      <div class="video-container">
+        <video controls muted autoplay loop playsinline>
+          <source src="${props.video}" type="video/mp4">
+        </video>
+      </div>
     `;
   } else {
     contenido += `
