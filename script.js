@@ -106,12 +106,24 @@ fetch('data/trabajos.geojson')
 
 function actualizarPanel(props) {
 
-  document.getElementById("info-panel").innerHTML = `
+  let contenido = `
     <h3>${props.trabajo}</h3>
-
     <p><strong>Instrumento:</strong> ${props.instrumento}</p>
-
     <p>${props.descripcion}</p>
   `;
-}
 
+  // 👇 si hay reel, lo agrega
+  if (props.reel) {
+    contenido += `
+    <a href="${props.reel}" target="_blank" style="color:#38bdf8;">
+        Ver video en Instagram
+    </a>
+    `;
+  } else {
+    contenido += `
+      <p style="opacity:0.6;">No hay video disponible</p>
+    `;
+  }
+
+  document.getElementById("info-panel").innerHTML = contenido;
+}

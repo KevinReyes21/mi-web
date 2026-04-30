@@ -6,21 +6,16 @@ body {
     overflow-x: hidden;
 }
 
-
-
 .map-layout {
   display: flex;
   gap: 30px;
-
-  width: 100vw;              /* 👈 ocupa todo el ancho */
-  margin-left: calc(-50vw + 50%); /* 👈 rompe el centrado */
-
-  padding: 0 40px;          /* opcional */
+  padding: 0 40px;
 }
 
-/* MAPA */
+
 .map-wrapper {
   flex: 2;
+  min-width: 0;
 }
 
 #map {
@@ -35,7 +30,8 @@ body {
   padding: 20px;
 
   height: 470px;   
-  overflow-y: auto;       /* 👈 🔥 CLAVE */
+  min-width: 0; /* 👈 🔥 ESTA LÍNEA ES LA SOLUCIÓN */
+  overflow-y: auto;  
 
   border-radius: 15px;
   backdrop-filter: blur(10px);
@@ -414,6 +410,16 @@ p, li {
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
+}
+
+section#trabajos-campo {
+  backdrop-filter: none;
+}
+
+.info-panel iframe {
+  margin-top: 15px;
+  border-radius: 12px;
+  width: 100%;
 }
 
 @media (max-width: 900px) {
