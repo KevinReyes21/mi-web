@@ -7,10 +7,9 @@ var capaManzanas;
 var capaInundacion;
 let datosManzanas;
 
-// 🗺️ BASEMAP
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© OpenStreetMap'
-}).addTo(map);
+L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+  attribution: 'Tiles © Esri'
+}).addTo(map);  
 
 function estiloManzanas(feature) {
 

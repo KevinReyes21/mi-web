@@ -35,10 +35,10 @@ particlesJS("particles-js", {
 
 // MAPA TRABAJOS DE CAMPO
 var map = L.map('map').setView([23.5, -102], 5);
-
-L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-  attribution: '&copy; OpenStreetMap &copy; CartoDB'
+L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+  attribution: 'Tiles © Esri'
 }).addTo(map);
+
 
 fetch('data/trabajos.geojson')
   .then(res => res.json())
@@ -130,3 +130,32 @@ function actualizarPanel(props) {
 
   document.getElementById("info-panel").innerHTML = contenido;
 }
+
+var legend = L.control({ position: "bottomright" });
+
+legend.onAdd = function (map) {
+  var div = L.DomUtil.create("div", "info legend");
+
+  div.innerHTML += "<h4>Instrumento</h4>";
+
+  var tipos = [
+    { nombre: "GNSS", color: getColor("gnss") },
+    { nombre: "Dron", color: getColor("dron") },
+    { nombre: "GNSS + Dron", color: getColor("gnss_dron") },
+    { nombre: "Estación Total", color: getColor("estacion_total") },
+    { nombre: "Procesamiento", color: getColor("procesamiento") }
+  ];
+
+  tipos.forEach(function (t) {
+    div.innerHTML += `
+      <div class="legend-item">
+        <span style="background:${t.color}"></span>
+        ${t.nombre}
+      </div>
+    `;
+  });
+
+  return div;
+};
+
+legend.addTo(map);

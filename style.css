@@ -447,3 +447,41 @@ section#trabajos-campo {
   50% { filter: drop-shadow(0 0 15px currentColor); }
   100% { filter: drop-shadow(0 0 5px currentColor); }
 }
+
+.legend {
+  background: rgba(0,0,0,0.8);
+  padding: 10px;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 13px;
+}
+
+.legend h4 {
+  margin: 0 0 5px;
+  font-size: 14px;
+  color: #00ffff;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.legend-item span {
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  margin-right: 6px;
+  border-radius: 50%;
+}
+
+/* SCROLL HABILIDADES (IGUAL QUE EXPERIENCIA) */
+.skills-grid::-webkit-scrollbar {
+  height: 6px;
+}
+
+.skills-grid::-webkit-scrollbar-thumb {
+  background: rgba(56,189,248,0.4);
+  border-radius: 10px;
+}
