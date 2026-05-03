@@ -6,6 +6,7 @@ function getColor(tipo) {
     case "dron": return "#ff00ff";          // magenta
     case "gnss_dron": return "#9d00ff";     // violeta
     case "estacion_total": return "#00ff85"; // verde neón
+    case "estacion_total_gnss": return "#1900ff"; // verde neón
     case "procesamiento": return "#ffae00"; // naranja brillante
     default: return "#ffffff";
   }
@@ -34,7 +35,7 @@ particlesJS("particles-js", {
 });
 
 // MAPA TRABAJOS DE CAMPO
-var map = L.map('map').setView([23.5, -102], 5);
+var map = L.map('map').setView([23.5, -102], 4);
 L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
   attribution: 'Tiles © Esri'
 }).addTo(map);
@@ -143,6 +144,7 @@ legend.onAdd = function (map) {
     { nombre: "Dron", color: getColor("dron") },
     { nombre: "GNSS + Dron", color: getColor("gnss_dron") },
     { nombre: "Estación Total", color: getColor("estacion_total") },
+    { nombre: "Estación Total + GNSS", color: getColor("estacion_total_gnss") },
     { nombre: "Procesamiento", color: getColor("procesamiento") }
   ];
 

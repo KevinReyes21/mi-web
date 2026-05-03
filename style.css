@@ -485,3 +485,72 @@ section#trabajos-campo {
   background: rgba(56,189,248,0.4);
   border-radius: 10px;
 }
+
+#proyectos-personales {
+  width: 100vw;
+  background: transparent;
+  border: none;
+}
+
+#proyectos-personales h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.proyectos-grid {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.proyecto-card {
+  width: 320px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 15px;
+  overflow: hidden;
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+  border: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+}
+
+.proyecto-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.proyecto-info {
+  padding: 15px;
+}
+
+.proyecto-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 15px 40px rgba(56,189,248,0.2);
+}
+
+.proyecto-card::after {
+  content: "Ver proyecto";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.proyecto-card:hover::after {
+  opacity: 1;
+}
+
+.proyectos-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;   /* 👈 aquí sí */
+
+}
